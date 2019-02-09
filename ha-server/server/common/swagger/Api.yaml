@@ -1,0 +1,119 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: ha-server
+  description: Home Assignment Mock Server
+basePath: /api/v1
+tags:
+  - name: Users
+    description: Users endpoints
+  - name: Specification
+    description: The swagger API specification
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+definitions:
+  UserBody:
+    type: object
+    title: user
+    required:
+      - name
+      - email
+      - password
+    properties:
+      name:
+        type: string
+        example: no_stress
+      email:
+        type: string
+        example: user@domain.com
+      password:
+        type: string
+        example: password
+  
+  LoginBody:
+    type: object
+    title: credentials
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+        example: user@domain.com
+      password:
+        type: string
+        example: password
+
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      description: Fetches all users
+      responses:
+        200:
+          description: Returns all users
+    post:
+      tags:
+        - Users
+      description: Create a new user
+      parameters:
+        - name: user
+          in: body
+          description: a user
+          required: true
+          schema: 
+            $ref: "#/definitions/UserBody"
+      responses:
+        200:
+          description: Returns the newly created user
+        400:
+          description: A user with the given email already exists
+        500:
+          description: Unable to create the user
+
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the user to retrieve
+          type: integer
+      responses:
+        200:
+          description: Return the user with the specified id
+        404:
+          description: Example not found
+  
+  /users/login:
+    post:
+      tags:
+        - Users
+      parameters:
+        - name: credentials
+          in: body
+          description: login credentials
+          required: true
+          schema:
+            $ref: "#/definitions/LoginBody"
+      reponses:
+        200:
+          description: Returns the user whose credentials were validated
+        401:
+          description: Unable to login
+
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
