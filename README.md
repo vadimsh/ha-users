@@ -10,6 +10,9 @@ Get started developing...
 # install deps
 npm install
 
+# start PostgreSQL
+npm run dev:db
+
 # run in development mode
 npm run dev
 
@@ -66,9 +69,9 @@ npm run test:debug
 
 ## Try It
 * Open you're browser to [http://localhost:3000](http://localhost:3000)
-* Invoke the `/examples` endpoint 
+* Invoke the `/users` endpoint 
   ```shell
-  curl http://localhost:3000/api/v1/examples
+  curl http://localhost:3000/api/v1/users
   ```
 
 
