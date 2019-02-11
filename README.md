@@ -1,10 +1,19 @@
-# ha-server
+# ha-users
 
-Home Assignment Mock Server
+HA-Users User Service
 
 ## Quick Start
 
 Get started developing...
+
+First of all create a `.env` file. You should use the `.env.sample` as a template:
+
+```shell
+cp .env.sample .env
+```
+
+Fill in all the empty values with whatever suits you best. After you're done you can run the following sequence of commands:
+
 
 ```shell
 # install deps

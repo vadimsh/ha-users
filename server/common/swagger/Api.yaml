@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: ha-server
-  description: Home Assignment Mock Server
+  title: ha-users
+  description: HA-Users User Service
 basePath: /api/v1
 tags:
   - name: Users

@@ -1,7 +1,7 @@
 {
-  "name": "ha-server",
+  "name": "ha-users",
   "version": "1.0.0",
-  "description": "Home Assignment Mock Server",
+  "description": "HA-Users User Service",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
