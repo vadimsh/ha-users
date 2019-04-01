@@ -1,0 +1,22 @@
+{
+    "cluster": "cluster1",
+    "serviceName": "ha-users-service",
+    "taskDefinition": "ha-users-task1:4",
+	"desiredCount": 1,
+	"launchType": "FARGATE",
+    "platformVersion": "LATEST",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:434946005067:targetgroup/ha-users-app-test/ec123a8b4c88b619",
+            "containerName": "ha-users-container",
+            "containerPort": 3000
+        }
+    ],
+  "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": ["subnet-1202573a"],
+            "securityGroups": ["sg-89bfd0ec"],
+            "assignPublicIp": "ENABLED"
+        }
+    } 
+}
