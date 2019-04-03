@@ -42,9 +42,8 @@
     { "name" : "POSTGRES_DB", "value" : "pgdb" },
     { "name" : "POSTGRES_PASSWORD", "value" : "pgpassword" },
 	{ "name" : "POSTGRES_USER", "value" : "pguser" }
-],
+]
       
-      "essential": true
 
     }
   ],
