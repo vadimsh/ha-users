@@ -6,11 +6,10 @@
       "portMappings": [
                 {
                     "containerPort": 3000, 
-                 
                     "protocol": "tcp"
                 }
             ], 
-"logConfiguration": {
+        "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/ha-users",
@@ -18,6 +17,32 @@
           "awslogs-stream-prefix": "ecs"
         }
       },
+      
+      "essential": true
+
+    },
+	    {
+      "name": "postgres-container",
+      "image": "434946005067.dkr.ecr.us-east-1.amazonaws.com/ha-postgres-repo:latest",
+      "portMappings": [
+                {
+                    "containerPort": 5432, 
+                    "protocol": "tcp"
+                }
+            ], 
+        "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ha-postgres",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+	  "environment" : [
+    { "name" : "POSTGRES_DB", "value" : "pgdb" },
+    { "name" : "POSTGRES_PASSWORD", "value" : "pgpassword" },
+	{ "name" : "POSTGRES_USER", "value" : "pguser" }
+],
       
       "essential": true
 
@@ -29,8 +54,8 @@
    "family": "ha-users-task1",
    "networkMode": "awsvpc",
 
-   "cpu": "4096", 
-   "memory": "8192",
+   "cpu": "256", 
+   "memory": "512",
    "executionRoleArn": "arn:aws:iam::434946005067:role/ecsTaskExecutionRole"
   
 }
