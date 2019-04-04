@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "ha-users-container",
-      "image": "434946005067.dkr.ecr.us-east-1.amazonaws.com/ha-users-repo:latest",
+      "image": "085161003627.dkr.ecr.us-east-1.amazonaws.com/ha-users-repo:latest",
       "portMappings": [
                 {
                     "containerPort": 3000, 
@@ -23,7 +23,7 @@
     },
 	    {
       "name": "postgres-container",
-      "image": "434946005067.dkr.ecr.us-east-1.amazonaws.com/ha-postgres-repo:latest",
+      "image": "085161003627.dkr.ecr.us-east-1.amazonaws.com/ha-postgres-repo:latest",
       "portMappings": [
                 {
                     "containerPort": 5432, 
@@ -55,6 +55,6 @@
 
    "cpu": "256", 
    "memory": "512",
-   "executionRoleArn": "arn:aws:iam::434946005067:role/ecsTaskExecutionRole"
+   "executionRoleArn": "arn:aws:iam::085161003627:role/ecsTaskExecutionRole"
   
 }
