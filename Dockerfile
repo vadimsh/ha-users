@@ -3,6 +3,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install
-EXPOSE 3001
+EXPOSE 3000
 ENTRYPOINT ["npm","run","dev"]
 
