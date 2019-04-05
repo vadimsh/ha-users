@@ -4,5 +4,5 @@ WORKDIR /usr/src/app
 COPY . .
 RUN npm install
 EXPOSE 3001
-ENTRYPOINT ["npm","run","dev"]
+CMD ["npm","run","dev"]
 
